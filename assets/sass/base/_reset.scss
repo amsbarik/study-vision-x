@@ -33,11 +33,22 @@ img {
     max-width: 100%;
 }
 
+.form-control, .form-select{
+
+    &::placeholder {
+        color: #b1b1b1; /* Replace with any color you want */
+        opacity: 1;     /* Optional: Ensure full visibility */
+        font-size: .875rem;
+    }
+}
+
 .form-control:focus, .form-select:focus{
     box-shadow: none;
     border: 1px solid $primary;
     outline: none;
+
 }
+
 
 .form-select:focus{
     box-shadow: none;

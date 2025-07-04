@@ -157,13 +157,16 @@
 
 .sub-heading{
     font-size: 1.375rem;
-    color: $secondary;
+    color: $primary;
     line-height: 1.375rem;
     font-weight: $semibold;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     @extend .text-gradient;
 }
 
+.section-padding{
+    padding: 4rem 0;
+}
 .section-heading{
     font-weight: $semibold;
     .heading-style{

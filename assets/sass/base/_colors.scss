@@ -5,6 +5,7 @@
 // $primary: #377AFF;
 // $primary: #0FAD64;
 $primary: #13619B;
+// $primary: #065FD4;
 $secondary: #87B39C;
 // $dark: #2a2b2b;
 // $dark: #34322E;
@@ -15,6 +16,9 @@ $danger: #ED302B;
 // $danger: #BA4A47;
 $white: #ffffff;
 $light: #F8F9FA;
+
+$primary-light: lighten($color: $primary, $amount: 44);
+// $primary-light: #96C7F9;
 
 
 // typhography color 
