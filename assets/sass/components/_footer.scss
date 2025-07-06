@@ -1,0 +1,66 @@
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+
+.footer{
+    background-color: $secondary;
+
+    .footer-card{
+        .logo{
+            width: 8rem;
+            height: auto;
+        }
+        .footer-link{
+            margin-top: 1rem;
+            // .link{
+            //     &:hover{
+            //         color: lighten($color: $primary, $amount: 10);
+            //     }
+            // }
+        }
+
+        .card-text{
+            color: lighten($color: $dark, $amount: 16);
+            padding-right: 9rem;
+        }
+        .form-control{
+            background-color: lighten($color: $secondary, $amount: 10);
+            background-color: $secondary;
+            border: 1px solid $primary;
+            height: 2.6rem;
+            color: $primary;
+            &::placeholder{
+                color: $primary;
+                opacity: .5;
+            }
+        }
+        .btn{height: 2.6rem;}
+    }
+
+    .copy-right{
+        color: lighten($color: $dark, $amount: 16);
+        font-size: .875rem;
+        font-weight: 400;
+    }
+    .brand-name{
+        color: $primary;
+        font-weight: 500;
+    }
+}
+
+.social-media{
+    .social-link{
+        margin-left: 1rem;
+        &:first-child{
+            margin-left: 0;
+        }
+        a{
+            color: $primary;
+            transition: .4s;
+            &:hover{
+                color: lighten($color: $primary, $amount: 10);
+            }
+        }
+    }
+}
