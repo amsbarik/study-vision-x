@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Assessment ফর্ম</title>
+  <style>
+    body {
+      font-family: "SolaimanLipi", Arial, sans-serif;
+      background-color: #eef2f7;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      background: white;
+      padding: 25px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+    label {
+      display: block;
+      margin: 15px 0 6px;
+      font-weight: 600;
+      color: #34495e;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1.8px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background-color: #27ae60;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #1e8449;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* চেকবক্স গ্রুপ স্টাইল */
+    .checkbox-group {
+      border: 1.8px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .checkbox-group label input[type="checkbox"] {
+      margin-right: 8px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .flag-icon {
+      width: 24px;
+      height: 16px;
+      margin-right: 8px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Student Assessment ফর্ম</h2>
+  <form id="eduForm">
+
+    <label>শিক্ষার্থীর নাম</label>
+    <input type="text" name="student_name" placeholder="আপনার পূর্ণ নাম" required />
+
+    <label>মোবাইল</label>
+    <input type="text" name="mobile" placeholder="01XXXXXXXXX" required />
+
+    <label>ইমেইল</label>
+    <input type="email" name="email" placeholder="আপনার ইমেইল" required />
+
+    <label>মহাদেশ নির্বাচন করুন</label>
+    <select id="continent" required>
+      <option value="">-- মহাদেশ নির্বাচন করুন --</option>
+      <option value="Asia">এশিয়া</option>
+      <option value="Europe">ইউরোপ</option>
+      <option value="North America">উত্তর আমেরিকা</option>
+      <option value="South America">দক্ষিণ আমেরিকা</option>
+      <option value="Africa">আফ্রিকা</option>
+      <option value="Australia">অস্ট্রেলিয়া</option>
+      <option value="Antarctica">অ্যান্টার্কটিকা</option>
+    </select>
+
+    <label>দেশ নির্বাচন করুন (মাল্টি সিলেক্ট)</label>
+    <div id="country-group" class="checkbox-group" aria-required="true">
+      <!-- দেশগুলোর চেকবক্স এখানে JS দিয়ে আসবে -->
+    </div>
+
+    <label id="university-label" class="hidden">বিশ্ববিদ্যালয় নির্বাচন করুন (মাল্টি সিলেক্ট)</label>
+    <div id="university-group" class="checkbox-group hidden" aria-required="true">
+      <!-- বিশ্ববিদ্যালয়ের চেকবক্স JS দিয়ে আসবে -->
+    </div>
+
+    <label>ভর্তির লেভেল নির্বাচন করুন</label>
+    <select id="study_level" name="study_level" required>
+      <option value="">-- নির্বাচন করুন --</option>
+      <option value="Diploma">ফাউন্ডেশন / ডিপ্লোমা</option>
+      <option value="Bachelor">ব্যাচেলর</option>
+      <option value="Masters">মাস্টার্স</option>
+      <option value="PhD">পিএইচডি</option>
+    </select>
+
+    <label>পছন্দের বিষয় / কোর্স</label>
+    <select id="subject" name="subject" required>
+      <option value="">-- বিষয় নির্বাচন করুন --</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Business Administration">Business Administration</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Hospitality Management">Hospitality Management</option>
+      <option value="Psychology">Psychology</option>
+      <option value="Law">Law</option>
+    </select>
+
+    <label>জব অপরচুনিটি</label>
+    <input type="text" id="job_opportunity" name="job_opportunity" readonly />
+
+    <div id="diploma-fields" class="hidden">
+      <label>SSC GPA</label>
+      <input type="text" name="ssc_d_gpa" placeholder="যেমন: 4.80/5.00" />
+    </div>
+
+    <div id="bachelor-fields" class="hidden">
+      <label>SSC GPA</label>
+      <input type="text" id="ssc_gpa" placeholder="যেমন: 4.75" oninput="calculateCombinedGPA()" />
+      <label>HSC GPA</label>
+      <input type="text" id="hsc_gpa" placeholder="যেমন: 4.80" oninput="calculateCombinedGPA()" />
+      <label>SSC + HSC মোট GPA</label>
+      <input type="text" id="combined_gpa" name="combined_gpa" readonly />
+    </div>
+
+    <div id="masters-fields" class="hidden">
+      <label>স্নাতক পর্যায়ের বিষয়</label>
+      <select id="bachelor_subject" name="bachelor_subject" >
+        <option value="">-- স্নাতক বিষয় নির্বাচন করুন --</option>
+        <option value="English">English</option>
+        <option value="BBA">BBA</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Law">Law</option>
+        <option value="Psychology">Psychology</option>
+      </select>
+      <label>স্নাতক CGPA</label>
+      <input type="text" name="bachelor_cgpa" placeholder="যেমন: 3.50/4.00" />
+    </div>
+
+    <label>IELTS (যদি থাকে)</label>
+    <input type="text" name="ielts_score" placeholder="যেমন: 6.5" />
+
+    <label>TOEFL (যদি থাকে)</label>
+    <input type="text" name="toefl_score" placeholder="যেমন: 90" />
+
+    <label>Duolingo (যদি থাকে)</label>
+    <input type="text" name="duolingo_score" placeholder="যেমন: 110" />
+
+    <label>ফিনান্সিয়াল সাপোর্ট</label>
+    <select name="financial_support">
+      <option value="self">নিজস্ব</option>
+      <option value="family">পারিবারিক</option>
+      <option value="sponsor">স্পন্সরশীপ</option>
+      <option value="scholarship">স্কলারশিপ খুঁজছি</option>
+    </select>
+
+    <label>মোট বাজেট (USD বা BDT)</label>
+    <input type="text" name="budget" placeholder="যেমন: 10,000 USD বা 10 লাখ টাকা" />
+
+    <label>পছন্দের Intake সময়</label>
+    <select name="intake" required>
+      <option value="">-- Intake নির্বাচন করুন --</option>
+      <option value="January">January</option>
+      <option value="June">June</option>
+      <option value="September">September</option>
+    </select>
+
+    <label>অতিরিক্ত মন্তব্য (যদি থাকে)</label>
+    <textarea name="comments" rows="3" placeholder="আপনার যেকোনো প্রশ্ন বা মন্তব্য"></textarea>
+
+    <button type="submit">✅ ফর্ম জমা দিন</button>
+  </form>
+</div>
+
+<script>
+  // দেশের পতাকা URL ম্যাপ
+  const flagMap = {
+    "Bangladesh": "https://countryflagsapi.com/png/bd",
+    "India": "https://countryflagsapi.com/png/in",
+    "China": "https://countryflagsapi.com/png/cn",
+    "Japan": "https://countryflagsapi.com/png/jp",
+    "UK": "https://countryflagsapi.com/png/gb",
+    "Germany": "https://countryflagsapi.com/png/de",
+    "France": "https://countryflagsapi.com/png/fr",
+    "Netherlands": "https://countryflagsapi.com/png/nl",
+    "USA": "https://countryflagsapi.com/png/us",
+    "Canada": "https://countryflagsapi.com/png/ca",
+    "Mexico": "https://countryflagsapi.com/png/mx",
+    "Brazil": "https://countryflagsapi.com/png/br",
+    "Argentina": "https://countryflagsapi.com/png/ar",
+    "South Africa": "https://countryflagsapi.com/png/za",
+    "Nigeria": "https://countryflagsapi.com/png/ng",
+    "Australia": "https://countryflagsapi.com/png/au"
+  };
+
+  // মহাদেশ ও দেশের ম্যাপ
+  const continentCountryMap = {
+    "Asia": ["Bangladesh", "India", "China", "Japan"],
+    "Europe": ["UK", "Germany", "France", "Netherlands"],
+    "North America": ["USA", "Canada", "Mexico"],
+    "South America": ["Brazil", "Argentina"],
+    "Africa": ["South Africa", "Nigeria"],
+    "Australia": ["Australia"],
+    "Antarctica": []
+  };
+
+  // দেশ ও বিশ্ববিদ্যালয় ম্যাপ
+  const countryUniversityMap = {
+    "UK": ["University of Oxford", "University of Cambridge"],
+    "Germany": ["Technical University of Munich", "University of Heidelberg"],
+    "USA": ["Harvard University", "MIT"],
+    "Canada": ["University of Toronto", "McGill University"],
+    "Australia": ["University of Melbourne", "University of Sydney"],
+    "Bangladesh": ["Dhaka University (DU)", "BUET"],
+    "India": ["IIT Delhi", "IIT Bombay"],
+    "China": ["Tsinghua University", "Peking University"],
+    "Japan": ["University of Tokyo", "Kyoto University"],
+    "France": ["Sorbonne University", "École Polytechnique"],
+    "Netherlands": ["University of Amsterdam", "Delft University of Technology"],
+    "Mexico": ["UNAM", "ITESM"],
+    "Brazil": ["University of São Paulo", "Federal University of Rio de Janeiro"],
+    "Argentina": ["University of Buenos Aires", "National University of La Plata"],
+    "South Africa": ["University of Cape Town", "University of Witwatersrand"],
+    "Nigeria": ["University of Lagos", "Obafemi Awolowo University"]
+  };
+
+  const continentSelect = document.getElementById("continent");
+  const countryGroup = document.getElementById("country-group");
+  const universityGroup = document.getElementById("university-group");
+  const universityLabel = document.getElementById("university-label");
+
+  // দেশের চেকবক্স তৈরি
+  function createCountryCheckbox(country) {
+    const label = document.createElement("label");
+    label.htmlFor = country_${country};
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = "countries";
+    checkbox.value = country;
+    checkbox.id = country_${country};
+
+    const img = document.createElement("img");
+    img.src = flagMap[country];
+    img.alt = country + " flag";
+    img.className = "flag-icon";
+
+    label.appendChild(checkbox);
+    label.appendChild(img);
+    label.appendChild(document.createTextNode(country));
+
+    return label;
+  }
+
+  // বিশ্ববিদ্যালয়ের চেকবক্স তৈরি
+  function createUniversityCheckbox(univ) {
+    const label = document.createElement("label");
+    label.htmlFor = univ_${univ.replace(/\s+/g, "_")};
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = "universities";
+    checkbox.value = univ;
+    checkbox.id = univ_${univ.replace(/\s+/g, "_")};
+
+    label.appendChild(checkbox);
+    label.appendChild(document.createTextNode(univ));
+
+    return label;
+  }
+
+  // মহাদেশ পরিবর্তনের ইভেন্ট
+  continentSelect.addEventListener("change", function () {
+    const countries = continentCountryMap[this.value] || [];
+    countryGroup.innerHTML = "";
+    universityGroup.innerHTML = "";
+    universityGroup.classList.add("hidden");
+    universityLabel.classList.add("hidden");
+
+    if (countries.length === 0) {
+      return;
+    }
+    countries.forEach(country => {
+      countryGroup.appendChild(createCountryCheckbox(country));
+    });
+  });
+
+  // দেশ পরিবর্তনের ইভেন্ট
+  countryGroup.addEventListener("change", function () {
+    const selectedCountries = Array.from(countryGroup.querySelectorAll("input[type=checkbox]:checked"))
+      .map(cb => cb.value);
+
+    universityGroup.innerHTML = "";
+
+    if (selectedCountries.length === 0) {
+      universityGroup.classList.add("hidden");
+      universityLabel.classList.add("hidden");
+      return;
+    }
+
+    let allUnivs = [];
+    selectedCountries.forEach(c => {
+      if (countryUniversityMap[c]) {
+        allUnivs = allUnivs.concat(countryUniversityMap[c]);
+      }
+    });
+
+    // ডুপ্লিকেট বিশ্ববিদ্যালয় সরানো
+    allUnivs = [...new Set(allUnivs)];
+
+    allUnivs.forEach(univ => {
+      universityGroup.appendChild(createUniversityCheckbox(univ));
+    });
+
+    universityGroup.classList.remove("hidden");
+    universityLabel.classList.remove("hidden");
+  });
+
+  // বাকি ফর্মের JS (লেভেল, GPA, সাবজেক্ট, জব)
+  const levelSelect = document.getElementById("study_level");
+  const diplomaFields = document.getElementById("diploma-fields");
+  const bachelorFields = document.getElementById("bachelor-fields");
+  const mastersFields = document.getElementById("masters-fields");
+
+  levelSelect.addEventListener("change", function () {
+    diplomaFields.classList.add("hidden");
+    bachelorFields.classList.add("hidden");
+    mastersFields.classList.add("hidden");
+
+    if (this.value === "Diploma") diplomaFields.classList.remove("hidden");
+    else if (this.value === "Bachelor") bachelorFields.classList.remove("hidden");
+    else if (this.value === "Masters") mastersFields.classList.remove("hidden");
+  });
+
+  function calculateCombinedGPA() {
+    const ssc = parseFloat(document.getElementById("ssc_gpa").value);
+    const hsc = parseFloat(document.getElementById("hsc_gpa").value);
+    if (!isNaN(ssc) && !isNaN(hsc)) {
+      document.getElementById("combined_gpa").value = (ssc + hsc).toFixed(2);
+    } else {
+      document.getElementById("combined_gpa").value = '';
+    }
+  }
+
+  const subjectSelect = document.getElementById("subject");
+  const jobInput = document.getElementById("job_opportunity");
+  const jobMap = {
+    "Computer Science": "Software Engineer, Web Developer",
+    "Business Administration": "Business Analyst, Marketing Executive",
+    "Engineering": "Civil Engineer, Mechanical Engineer",
+    "Hospitality Management": "Hotel Manager, Event Coordinator",
+    "Psychology": "Therapist, Counselor",
+    "Law": "Legal Advisor, Corporate Lawyer"
+  };
+  subjectSelect.addEventListener("change", function () {
+    const job = jobMap[this.value] || '';
+    jobInput.value = job;
+  });
+
+  document.getElementById("eduForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("✅ ফর্ম সফলভাবে সাবমিট হয়েছে!");
+  });
+</script>
+
+</body>
+</html>
