@@ -1,0 +1,41 @@
+
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+.university-top{
+    .cover-img{
+        width: 100%;
+        height: 25rem;
+        object-fit: cover;
+    }
+
+    .uv-name-wrap{
+        padding: 1rem 2rem;
+        background-color: $bg-light;
+        box-shadow: $shadow-lg;
+        .uv-logo-wrap{
+            height: 0px;
+            .uv-logo{
+                width: 7rem;
+                height: 7rem;
+                object-fit: cover;
+                margin-top: -9.5rem;
+                
+                border-radius: .5rem;
+                box-shadow: $shadow-lg;
+            }
+
+        }
+        
+    }
+}
+
+.uv-information{
+    margin-top: 3rem;
+    
+    .uv-info{
+        margin-top: 1rem;
+        i{color: $primary;}
+    }
+}
