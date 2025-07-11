@@ -29,6 +29,19 @@
 
 .uv-information{
     margin-top: 3rem;
+
+    .uv-rank-wrap{
+        width: 34%;
+        background-color: $bg-light;
+        padding: 1rem;
+        margin-bottom: 2.2rem;
+        .card-text{
+            line-height: 1.3rem;
+        }
+        .card-title{
+            font-size: 1.2rem;
+        }
+    }
     
     .uv-info{
         margin-top: 1rem;

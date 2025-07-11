@@ -23,6 +23,12 @@
     border-radius: 4px;
 }
 
+.rank{
+    font-size: 1rem;
+    font-weight: 500;
+    color: $dark;
+}
+
 .btn-primary {
     background: linear-gradient(90deg, $primary, lighten($primary, 16));
     &::before {
