@@ -17,6 +17,11 @@
     // line-height: auto;
 }
 
+.btn-sm{
+    font-size: .84rem;
+    padding: 6px 16px 4px 16px;
+    border-radius: 4px;
+}
 
 .btn-primary {
     background: linear-gradient(90deg, $primary, lighten($primary, 16));
@@ -170,6 +175,7 @@
 }
 .section-heading{
     font-weight: $semibold;
+    margin-bottom: 2rem;
     .heading-style{
         .dot{
             background: $gradient-secondary;
