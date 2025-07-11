@@ -97,7 +97,7 @@
 
 <div class="container">
   <h2>Student Assessment ফর্ম</h2>
-  <form id="eduForm">
+  <form id="assessmentForm">
 
     <label>শিক্ষার্থীর নাম</label>
     <input type="text" name="student_name" placeholder="আপনার পূর্ণ নাম" required />
@@ -389,7 +389,7 @@
     jobInput.value = job;
   });
 
-  document.getElementById("eduForm").addEventListener("submit", function (e) {
+  document.getElementById("assessmentForm").addEventListener("submit", function (e) {
     e.preventDefault();
     alert("✅ ফর্ম সফলভাবে সাবমিট হয়েছে!");
   });

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap cdn css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!-- font-awesome link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- bootstrap css link -->
+    <!-- <link rel="stylesheet" href="./assets/node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+
+    <!-- custom css link -->
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+
+    <title>Student Assessment</title>
+
+    <style>
+    .hidden { display: none; }
+    .flag-icon { width: 24px; height: 16px; margin-right: 5px; }
+    .checkbox-group label { display: block; margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+
+    <!-- started 3 july , 8.30pm -->
+
+    <!-- main header start  -->
+    <header>
+        <!-- top-info start  -->
+        <div class="top-info p-1">
+            <div class="container">
+                <div class="top-info-wrap d-flex justify-content-between">
+                    <div class="scroll-container">
+                        <p class="scroll-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque sequi eveniet porro maxime doloribus impedit nesciunt ad repellendus ut itaque commodi voluptas, quaerat rerum architecto! Id facilis tenetur voluptatem quia ratione, similique doloremque! Exercitationem quasi pariatur laboriosam tenetur aliquam sequi? Non cumque reiciendis consequuntur omnis iste dolorem temporibus cupiditate fugit.</p>
+                    </div>
+
+                    <div class="contact">
+                        <i class="fa-brands fa-whatsapp me-1"></i> +880 1717 718677
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- main nav start  -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-to">
+            <div class="container ">
+                <a class="navbar-brand" href="#">Study Vision X</a>
+
+                <!-- search-form  -->
+                <form class="search-form flex-grow-1" role="search">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Search your university" aria-label="Search">
+                        <button class="input-group-text search-btn" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
+
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    
+                    <div class="offcanvas-body">
+
+                        
+                        
+                        <ul class="navbar-nav justify-content-end flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+
+                            <li class="nav-item dropdown ms-4">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+       
+        <!-- main nav end -->
+
+
+    </header>
+    <!-- main header end  -->
+
+    <!-- main content start -->
+    <main>
+        
+        <!-- page top start -->
+        <section class="page-top bg-light">
+            <div class="container">
+                <div class="page-top-wrap">
+                    <h1 class="heading text-center">Student Assessment Form</h1>
+                    <p class="text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, accusantium dicta? Minus iusto expedita ullam!</p>
+                </div>
+            </div>
+        </section>
+        <!-- page top end -->
+
+
+        <section class="bg-light section-padding">
+            <div class="container">
+                <form id="assessmentForm" class="assessment-form mx-auto rounded bg-white">
+                    <div class="row row-cols-1 row-cols-lg- g-">
+
+                    <!-- left -->
+                    <div class="co">
+                        <div class="form-left   rounded">
+                            <div class="field-box mt-0">
+                                <label class="form-label">Select Continent</label>
+                                <select id="continent" class="form-select" required>
+                                <option value="">-- Select Continent --</option>
+                                <option value="Asia">Asia</option>
+                                <option value="Europe">Europe</option>
+                                <option value="North America">North America</option>
+                                <option value="South America">South America</option>
+                                <option value="Africa">Africa</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Antarctica">Antarctica</option>
+                                </select>
+                            </div>
+
+                            <div class="field-box">
+                                <label class="form-label">Select Country (Multi-select)</label>
+                                <div id="country-group" class="checkbox-group country-list border rounded "></div>
+                            </div>
+
+                            <div class="d-flex field-box">
+                                <div class="form-check me-4 me-md-5">
+                                    <input class="form-check-input" type="checkbox" value="" id="uvPublic" checked>
+                                    <label class="form-check-label" for="uvPublic">Public University</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="uvPrivate" >
+                                    <label class="form-check-label" for="uvPrivate"> Private University</label>
+                                </div>
+                            </div>
+
+                            <div class="field-box">
+                                <label id="university-label" class="form-label hidden">Select University (Multi-select)</label>
+                                <div id="university-group" class="checkbox-group border rounded p-2 hidden"></div>
+                            </div>
+                            <div class="field-box">
+                                <label class="form-label">Select Admission Level</label>
+                                <select id="study_level" name="study_level" class="form-select" required>
+                                <option value="">-- Select --</option>
+                                <option value="Diploma">Foundation / Diploma</option>
+                                <option value="Bachelor">Bachelor</option>
+                                <option value="Masters">Masters</option>
+                                <option value="PhD">PhD</option>
+                                </select>
+                            </div>
+                            <div class="field-box">
+                                <label class="form-label">Preferred Subject / Course</label>
+                                <select id="subject" name="subject" class="form-select" required>
+                                <option value="">-- Select Subject --</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Business Administration">Business Administration</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Hospitality Management">Hospitality Management</option>
+                                <option value="Psychology">Psychology</option>
+                                <option value="Law">Law</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- right  -->
+                     <div class="co">
+                        <div class="form-right  rounded">
+                            <div class="field-box">
+                                <label class="form-label">Job Opportunities</label>
+                                <input type="text" id="job_opportunity" name="job_opportunity" class="form-control" readonly />
+                            </div>
+
+                            <!-- Diploma Fields -->
+                            <div id="diploma-fields" class="hidden">
+                                <div class="col-md-6 field-box">
+                                <label class="form-label">SSC GPA</label>
+                                <input type="text" name="ssc_d_gpa" class="form-control" placeholder="e.g. 4.80/5.00" />
+                                </div>
+                            </div>
+
+                            <!-- Bachelor Fields -->
+                            <div id="bachelor-fields" class="row hidden">
+                                <div class="col-md-4 field-box">
+                                    <label class="form-label">SSC GPA</label>
+                                    <input type="text" id="ssc_gpa" class="form-control" placeholder="e.g. 4.75" oninput="calculateCombinedGPA()" />
+                                </div>
+                                <div class="col-md-4 field-box">
+                                    <label class="form-label">HSC GPA</label>
+                                    <input type="text" id="hsc_gpa" class="form-control" placeholder="e.g. 4.80" oninput="calculateCombinedGPA()" />
+                                </div>
+                                <div class="col-md-4 field-box">
+                                    <label class="form-label">Total GPA</label>
+                                    <input type="text" id="combined_gpa" name="combined_gpa" class="form-control" readonly />
+                                </div>
+                            </div>
+
+                            <!-- Masters Fields -->
+                            <div id="masters-fields" class="row hidden">
+                                <div class="field-box">
+                                    <label class="form-label">Bachelor Subject</label>
+                                    <select id="bachelor_subject" name="bachelor_subject" class="form-select">
+                                        <option value="">-- Select Bachelor Subject --</option>
+                                        <option value="English">English</option>
+                                        <option value="BBA">BBA</option>
+                                        <option value="Computer Science">Computer Science</option>
+                                        <option value="Engineering">Engineering</option>
+                                        <option value="Law">Law</option>
+                                        <option value="Psychology">Psychology</option>
+                                    </select>
+                                </div>
+                                <div class="field-box">
+                                    <label class="form-label">Bachelor CGPA</label>
+                                    <input type="text" name="bachelor_cgpa" class="form-control" placeholder="e.g. 3.50/4.00" />
+                                </div>
+                            </div>
+
+                            <div class="field-box">
+                                <label class="form-label">IELTS (if any)</label>
+                                <input type="text" name="ielts_score" class="form-control" placeholder="e.g. 6.5" />
+                            </div>
+                            <div class="field-box">
+                                <label class="form-label">TOEFL (if any)</label>
+                                <input type="text" name="toefl_score" class="form-control" placeholder="e.g. 90" />
+                            </div>
+                            <div class="field-box">
+                                <label class="form-label">Duolingo (if any)</label>
+                                <input type="text" name="duolingo_score" class="form-control" placeholder="e.g. 110" />
+                            </div>
+
+                            <div class="field-box">
+                                <label class="form-label">Financial Support</label>
+                                <select name="financial_support" class="form-select">
+                                <option value="self">Self</option>
+                                <option value="family">Family</option>
+                                <option value="sponsor">Sponsorship</option>
+                                <option value="scholarship">Looking for Scholarship</option>
+                                </select>
+                            </div>
+                            <div class="field-box">
+                                <label class="form-label">Total Budget (USD or BDT)</label>
+                                <input type="text" name="budget" class="form-control" placeholder="e.g. 10,000 USD or 10 lakh BDT" />
+                            </div>
+
+                            <div class="field-box">
+                                <label class="form-label">Preferred Intake</label>
+                                <select name="intake" class="form-select" required>
+                                <option value="">-- Select Intake --</option>
+                                <option value="January">January</option>
+                                <option value="June">June</option>
+                                <option value="September">September</option>
+                                </select>
+                            </div>
+
+                        </div>
+                     </div>
+
+                    
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- <div class="col-md-6">
+                        <label class="form-label">Additional Comments (if any)</label>
+                        <textarea name="comments" rows="3" class="form-control" placeholder="Your question or comment"></textarea>
+                    </div> -->
+
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary">Find University</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    <!-- main content end -->
+
+    <!-- footer start  -->
+    <footer class="footer section-padding pb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="footer-card">
+                        <img src="assets/img/logo-blue.png" class="logo" alt="">
+
+                        <ul class="footer-link pt-2 pt-md-3">
+                            
+                            <li class="link"><a href="mailto: hello@studyvisionx.com" class="link"><i class="fa-solid fa-envelope-open me-2"></i>hello@studyvisionx.com</a></li>
+                            <li class="link"><a href="tel: +8801717718677" class="link"><i class="fa-solid fa-phone me-2"></i>+880 1717 718677</a></li>
+                            <!-- <li class="link"><i class="fa-solid fa-location-dot me-2"></i>Malibag, Dhaka, Bangladesh</li> -->
+                        </ul>
+                    </div>
+
+                </div>
+                
+                <div class="col-3">
+                    <div class="footer-card">
+                        <h2 class="sub-heading">Quick Link</h2>
+
+                        <ul class="footer-link">
+                            <li class="link"><a href="tel: +8801717718677" class="link"><i class="fa-solid fa-angle-right me-2"></i>Privacy Policy</a></li>
+                            <li class="link"><a href="tel: +8801717718677" class="link"><i class="fa-solid fa-angle-right me-2"></i>About Us</a></li>
+                            <li class="link"><a href="tel: +8801717718677" class="link"><i class="fa-solid fa-angle-right me-2"></i>Contact us</a></li>
+                            <li class="link"><a href="tel: +8801717718677" class="link"><i class="fa-solid fa-angle-right me-2"></i>Blogs</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-6">
+                    <div class="footer-card">
+                        <h2 class="sub-heading">Subscrive</h2>
+
+                        <p class="card-text pt-2">Subscrive our news later to get more information about admission University in the world 2x faster!</p>
+
+                        <form class="row g-2 mt-1 mt-md-2">
+                            <div class="col-8">
+                                <label for="subscrive-mail" class="visually-hidden">Email</label>
+                                <input type="email" class="form-control" id="subscriveMail" placeholder="Enter your email">
+                            </div>
+                            <div class="col-2">
+                                <button type="submit" class="btn btn-primary">subscrive</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="mb-0 mt-4">
+            <div class="d-flex justify-content-between py-2 py-md-3">
+                <small class="copy-right">&copy;2025 reserved by - <span class="brand-name">Study Vision X</span></small>
+
+                <ul class="d-flex social-media m-0">
+                    <li class="social-link pb-0"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li class="social-link pb-0"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li class="social-link pb-0"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li class="social-link pb-0"><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li class="social-link pb-0"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="social-link pb-0"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+
+            </div>
+        </div>
+
+    </footer>
+
+
+
+<script>
+
+
+
+const flagMap = {
+  "Bangladesh": "https://flagcdn.com/w40/bd.png",
+  "India": "https://flagcdn.com/w40/in.png",
+  "China": "https://flagcdn.com/w40/cn.png",
+  "Japan": "https://flagcdn.com/w40/jp.png",
+  "UK": "https://flagcdn.com/w40/gb.png",
+  "Germany": "https://flagcdn.com/w40/de.png",
+  "France": "https://flagcdn.com/w40/fr.png",
+  "Netherlands": "https://flagcdn.com/w40/nl.png",
+  "USA": "https://flagcdn.com/w40/us.png",
+  "Canada": "https://flagcdn.com/w40/ca.png",
+  "Mexico": "https://flagcdn.com/w40/mx.png",
+  "Brazil": "https://flagcdn.com/w40/br.png",
+  "Argentina": "https://flagcdn.com/w40/ar.png",
+  "South Africa": "https://flagcdn.com/w40/za.png",
+  "Nigeria": "https://flagcdn.com/w40/ng.png",
+  "Australia": "https://flagcdn.com/w40/au.png"
+};
+
+// const isoCountries = [
+//   { name: "Bangladesh", alpha2: "BD" },
+//   { name: "India", alpha2: "IN" },
+//   { name: "Japan", alpha2: "JP" },
+//   { name: "Germany", alpha2: "DE" },
+//   { name: "United States", alpha2: "US" },
+//   { name: "Canada", alpha2: "CA" },
+//   { name: "France", alpha2: "FR" },
+//   { name: "Australia", alpha2: "AU" },
+//   { name: "United Kingdom", alpha2: "GB" },
+//   { name: "China", alpha2: "CN" },
+//   { name: "Mexico", alpha2: "MX" },
+//   { name: "Brazil", alpha2: "BR" },
+//   { name: "Argentina", alpha2: "AR" },
+//   { name: "South Africa", alpha2: "ZA" },
+//   { name: "Nigeria", alpha2: "NG" },
+//   // ... add more as needed
+// ];
+
+
+// const flagMap = {};
+
+// isoCountries.forEach(country => {
+//   const code = country.alpha2.toLowerCase();  // bd, us, etc.
+//   flagMap[country.name] = `https://flagcdn.com/w40/${code}.png`;
+// });
+
+// // Example usage
+// console.log(flagMap["Bangladesh"]); // https://flagcdn.com/w40/bd.png
+
+
+
+  const continentCountryMap = {
+    "Asia": ["Bangladesh", "India", "China", "Japan"],
+    "Europe": ["UK", "Germany", "France", "Netherlands"],
+    "North America": ["USA", "Canada", "Mexico"],
+    "South America": ["Brazil", "Argentina"],
+    "Africa": ["South Africa", "Nigeria"],
+    "Australia": ["Australia"],
+    "Antarctica": []
+  };
+
+  const countryUniversityMap = {
+    "UK": ["University of Oxford", "University of Cambridge"],
+    "Germany": ["Technical University of Munich", "University of Heidelberg"],
+    "USA": ["Harvard University", "MIT"],
+    "Canada": ["University of Toronto", "McGill University"],
+    "Australia": ["University of Melbourne", "University of Sydney"],
+    "Bangladesh": ["Dhaka University (DU)", "BUET"],
+    "India": ["IIT Delhi", "IIT Bombay"],
+    "China": ["Tsinghua University", "Peking University"],
+    "Japan": ["University of Tokyo", "Kyoto University"],
+    "France": ["Sorbonne University", "École Polytechnique"],
+    "Netherlands": ["University of Amsterdam", "Delft University of Technology"],
+    "Mexico": ["UNAM", "ITESM"],
+    "Brazil": ["University of São Paulo", "Federal University of Rio de Janeiro"],
+    "Argentina": ["University of Buenos Aires", "National University of La Plata"],
+    "South Africa": ["University of Cape Town", "University of Witwatersrand"],
+    "Nigeria": ["University of Lagos", "Obafemi Awolowo University"]
+  };
+
+  const continentSelect = document.getElementById("continent");
+  const countryGroup = document.getElementById("country-group");
+  const universityGroup = document.getElementById("university-group");
+  const universityLabel = document.getElementById("university-label");
+
+  function createCountryCheckbox(country) {
+    const label = document.createElement("label");
+    label.htmlFor = `country_${country}`;
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = "countries";
+    checkbox.value = country;
+    checkbox.id = `country_${country}`;
+
+    const img = document.createElement("img");
+    img.src = flagMap[country];
+    img.alt = country + " flag";
+    img.className = "flag-icon";
+
+    label.appendChild(checkbox);
+    label.appendChild(img);
+    label.appendChild(document.createTextNode(country));
+
+    return label;
+  }
+
+  function createUniversityCheckbox(univ) {
+    const safeId = univ.replace(/\s+/g, "_");
+    const label = document.createElement("label");
+    label.htmlFor = `univ_${safeId}`;
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = "universities";
+    checkbox.value = univ;
+    checkbox.id = `univ_${safeId}`;
+
+    label.appendChild(checkbox);
+    label.appendChild(document.createTextNode(univ));
+
+    return label;
+  }
+
+  continentSelect.addEventListener("change", function () {
+    const countries = continentCountryMap[this.value] || [];
+    countryGroup.innerHTML = "";
+    universityGroup.innerHTML = "";
+    universityGroup.classList.add("hidden");
+    universityLabel.classList.add("hidden");
+
+    countries.forEach(country => {
+      countryGroup.appendChild(createCountryCheckbox(country));
+    });
+  });
+
+  countryGroup.addEventListener("change", function () {
+    const selectedCountries = Array.from(
+      countryGroup.querySelectorAll("input[type=checkbox]:checked")
+    ).map(cb => cb.value);
+
+    universityGroup.innerHTML = "";
+
+    if (selectedCountries.length === 0) {
+      universityGroup.classList.add("hidden");
+      universityLabel.classList.add("hidden");
+      return;
+    }
+
+    let allUnivs = [];
+    selectedCountries.forEach(c => {
+      if (countryUniversityMap[c]) {
+        allUnivs = allUnivs.concat(countryUniversityMap[c]);
+      }
+    });
+
+    allUnivs = [...new Set(allUnivs)];
+
+    allUnivs.forEach(univ => {
+      universityGroup.appendChild(createUniversityCheckbox(univ));
+    });
+
+    universityGroup.classList.remove("hidden");
+    universityLabel.classList.remove("hidden");
+  });
+
+  const levelSelect = document.getElementById("study_level");
+  const diplomaFields = document.getElementById("diploma-fields");
+  const bachelorFields = document.getElementById("bachelor-fields");
+  const mastersFields = document.getElementById("masters-fields");
+
+  levelSelect.addEventListener("change", function () {
+    diplomaFields.classList.add("hidden");
+    bachelorFields.classList.add("hidden");
+    mastersFields.classList.add("hidden");
+
+    if (this.value === "Diploma") diplomaFields.classList.remove("hidden");
+    else if (this.value === "Bachelor") bachelorFields.classList.remove("hidden");
+    else if (this.value === "Masters") mastersFields.classList.remove("hidden");
+  });
+
+  function calculateCombinedGPA() {
+    const ssc = parseFloat(document.getElementById("ssc_gpa").value);
+    const hsc = parseFloat(document.getElementById("hsc_gpa").value);
+    if (!isNaN(ssc) && !isNaN(hsc)) {
+      document.getElementById("combined_gpa").value = (ssc + hsc).toFixed(2);
+    } else {
+      document.getElementById("combined_gpa").value = '';
+    }
+  }
+
+  const subjectSelect = document.getElementById("subject");
+  const jobInput = document.getElementById("job_opportunity");
+  const jobMap = {
+    "Computer Science": "Software Engineer, Web Developer",
+    "Business Administration": "Business Analyst, Marketing Executive",
+    "Engineering": "Civil Engineer, Mechanical Engineer",
+    "Hospitality Management": "Hotel Manager, Event Coordinator",
+    "Psychology": "Therapist, Counselor",
+    "Law": "Legal Advisor, Corporate Lawyer"
+  };
+
+  subjectSelect.addEventListener("change", function () {
+    const job = jobMap[this.value] || '';
+    jobInput.value = job;
+  });
+
+  document.getElementById("assessmentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("✅ ফর্ম সফলভাবে সাবমিট হয়েছে!");
+  });
+</script>
+
+
+
+
+    <!-- bootstrap cdn js link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <!-- bootstrap js link -->
+    <!-- <script src="./assets/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- custom js link -->
+     <script src="./assets/js/main.js"></script>
+
+
+
+  
+
+
+</body>
+</html>
+
+
+
+
+
+
+
