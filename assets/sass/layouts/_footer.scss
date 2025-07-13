@@ -4,34 +4,41 @@
 
 
 .footer{
-    background-color: $secondary;
+    background-color: $primary;
 
     .footer-card{
         .logo{
             width: 8rem;
             height: auto;
         }
+        .sub-heading{
+            color: $white;
+        }
         .footer-link{
             margin-top: 1rem;
-            // .link{
-            //     &:hover{
-            //         color: lighten($color: $primary, $amount: 10);
-            //     }
-            // }
+            .link{
+                color: lighten($color: $primary, $amount: 30);
+                &:hover{
+                    color: $secondary;
+                }
+                i{color: $secondary;}
+            }
         }
 
         .card-text{
-            color: lighten($color: $dark, $amount: 16);
+            color: darken($color: $light, $amount: 10);
             padding-right: 9rem;
         }
         .form-control{
-            background-color: lighten($color: $secondary, $amount: 10);
-            background-color: $secondary;
+            background-color: lighten($color: $primary, $amount: 7);
             border: 1px solid $primary;
             height: 2.6rem;
             color: $primary;
+            &:focus{
+                background-color: lighten($color: $primary, $amount: 14);
+            }
             &::placeholder{
-                color: $primary;
+                color: darken($color: $light, $amount: 12);
                 opacity: .5;
             }
         }
@@ -39,12 +46,12 @@
     }
 
     .copy-right{
-        color: lighten($color: $dark, $amount: 16);
+        color: darken($color: $light, $amount: 10);
         font-size: .875rem;
         font-weight: 400;
     }
     .brand-name{
-        color: $primary;
+        color: $secondary;
         font-weight: 500;
     }
 }
@@ -56,10 +63,10 @@
             margin-left: 0;
         }
         a{
-            color: $primary;
+            color: $secondary;
             transition: .4s;
             &:hover{
-                color: lighten($color: $primary, $amount: 10);
+                color: lighten($color: $primary, $amount: 16);
             }
         }
     }

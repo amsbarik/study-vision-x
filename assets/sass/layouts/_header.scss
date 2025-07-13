@@ -78,8 +78,13 @@
 
 // navbar
 .navbar{
-    padding: 1.2rem 0;
+    padding: .875rem 0;
     box-shadow: $shadow;
+    .header-logo{
+        height: 3.2rem;
+        width: auto;
+        object-fit: contain;
+    }
     .navbar-toggler{
 
         &:focus{
@@ -105,6 +110,14 @@
             font-size: .875rem;
             &:focus{
                 box-shadow: none;
+            }
+        }
+
+        .navbar-nav{
+            .nav-item{
+                .nav-link.active{
+                    color: $primary;
+                }
             }
         }
         

@@ -30,3 +30,18 @@ continents.forEach(continent => {
   });
 });
 
+
+// index page departments show more/less js 
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.readmore').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var currentWrapper = this.closest('.departments-wrap');
+            document.querySelectorAll('.departments-wrap.show').forEach(function(wrapper) {
+                if (wrapper !== currentWrapper) {
+                    wrapper.classList.remove('show');
+                }
+            });
+            currentWrapper.classList.toggle('show');
+        });
+    });
+});
